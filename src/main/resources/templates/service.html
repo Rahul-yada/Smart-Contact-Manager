@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Welcome to service page of my project</h1>
+    <hr />
+   <div th:replace="~{base :: parent(~{::p})}">
+    <p>this is word that is pass through fragment to check the passing html</p>
+   </div>
+</body>
+</html> 
