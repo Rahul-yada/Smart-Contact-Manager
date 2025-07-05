@@ -1,15 +1,83 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+  <title>Services | Contact Manager</title>
 </head>
-<body>
-    <h1>Welcome to service page of my project</h1>
-    <hr />
-   <div th:replace="~{base :: parent(~{::p})}">
-    <p>this is word that is pass through fragment to check the passing html</p>
-   </div>
+<body class="bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100">
+<div id="content">
+
+  <!-- Services Header -->
+  <section class="bg-blue-600 text-white py-16 text-center">
+    <div class="container mx-auto">
+      <h1 class="text-4xl font-bold mb-4">Our Services</h1>
+      <p class="text-lg">We provide secure, intuitive, and powerful tools to help you manage your contacts efficiently.</p>
+    </div>
+  </section>
+
+  <!-- Service Cards -->
+  <section class="py-16 bg-white dark:bg-gray-800">
+    <div class="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 px-4">
+
+      <div class="p-6 bg-gray-100 rounded shadow hover:shadow-lg transition duration-300 dark:bg-gray-700">
+        <i class="fas fa-user-plus text-blue-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Contact Creation</h3>
+        <p>Create and store contact profiles including names, phone numbers, emails, and more with ease.</p>
+      </div>
+
+      <div class="p-6 bg-gray-100 rounded shadow hover:shadow-lg transition duration-300 dark:bg-gray-700">
+        <i class="fas fa-edit text-blue-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Edit & Update Contacts</h3>
+        <p>Modify contact information on the go through our responsive interface.</p>
+      </div>
+
+      <div class="p-6 bg-gray-100 rounded shadow hover:shadow-lg transition duration-300 dark:bg-gray-700">
+        <i class="fas fa-trash-alt text-blue-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Delete Contacts</h3>
+        <p>Remove outdated or unnecessary contacts to keep your list clean and organized.</p>
+      </div>
+
+      <div class="p-6 bg-gray-100 rounded shadow hover:shadow-lg transition duration-300 dark:bg-gray-700">
+        <i class="fas fa-shield-alt text-blue-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Secure Access</h3>
+        <p>All your data is encrypted and securely stored. Login with confidence using our secure authentication system.</p>
+      </div>
+
+      <div class="p-6 bg-gray-100 rounded shadow hover:shadow-lg transition duration-300 dark:bg-gray-700">
+        <i class="fas fa-search text-blue-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Search & Filter</h3>
+        <p>Quickly find any contact using advanced search and filtering options.</p>
+      </div>
+
+      <div class="p-6 bg-gray-100 rounded shadow hover:shadow-lg transition duration-300 dark:bg-gray-700">
+        <i class="fas fa-download text-blue-600 text-4xl mb-4"></i>
+        <h3 class="text-xl font-semibold mb-2">Export Contacts</h3>
+        <p>Download your contact list for backup or migration purposes with a single click.</p>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="bg-blue-600 text-white py-16 text-center">
+    <div class="container mx-auto">
+      <h2 class="text-3xl font-bold mb-4">Start Managing Your Contacts Today</h2>
+      <p class="text-lg mb-8">Join our platform and experience hassle-free contact management tailored to your needs.</p>
+      <a data-th-href="@{/register}" class="bg-white text-blue-600 px-6 py-3 rounded-full font-semibold hover:bg-gray-100 transition duration-300 dark:bg-gray-100 dark:hover:bg-gray-300">Get Started</a>
+    </div>
+  </section>
+
+
+   <!-- Footer Section -->
+   <footer class="bg-gray-800 text-white py-8">
+      <div class="container mx-auto text-center">
+        <p>&copy; 2025 Contact Manager. All rights reserved.</p>
+        <p>Follow us on <a href="#" class="text-blue-400">Facebook</a>, <a href="#" class="text-blue-400">Twitter</a>, and <a href="#" class="text-blue-400">Instagram</a>.</p>
+      </div>
+    </footer>
+
+</div>
+<script>
+  console.log("services page loaded");
+</script>
 </body>
-</html> 
+</html>

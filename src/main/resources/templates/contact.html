@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Contact Page</title>
+</head>
+
+<body>
+   <div id="content">
+
+
+
+      <section class="py-20 bg-gray-100 dark:bg-gray-800 animate__animated animate__fadeInUp">
+         <div class="container mx-auto text-center">
+            <h2 class="text-3xl font-bold mb-12">Get in Touch</h2>
+            <form action="https://formsubmit.co/e1062240246@timscdrmumbai.in" method="POST" class="max-w-lg mx-auto">
+               <input type="text" name="name" placeholder="Your Name" required
+                  class="w-full px-4 py-2 mb-4 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+
+               <input type="email" name="email" placeholder="Your Email" required
+                  class="w-full px-4 py-2 mb-4 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white">
+
+               <textarea name="message" placeholder="Your Message"
+                  class="w-full px-4 py-2 mb-4 border border-gray-300 rounded dark:bg-gray-700 dark:border-gray-600 dark:text-white"></textarea>
+                  <input type="hidden" name="_captcha" value="false">
+               <button type="submit"
+                  class="bg-blue-600 text-white px-6 py-3 rounded font-semibold hover:bg-blue-700 transition duration-300">
+                  Send Message
+               </button>
+            </form>
+
+         </div>
+      </section>
+
+
+
+   </div>
+   <script>
+      console.log("contact page");
+   </script>
+   <script>
+      console.log("thiis is contact page of out project");
+   </script>
+
+
+</body>
+
+</html>

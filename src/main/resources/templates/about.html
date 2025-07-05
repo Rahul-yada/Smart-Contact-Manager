@@ -1,24 +1,117 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>About Page</title>
 </head>
 <body>
-    <h1>Welcome to about page</h1>
-    <hr />
-    <div th:replace="${isLogin} ?  ~{base :: parent(~{::section})} :  ~{base :: test(~{::#second})}">
-        <section>
-            <h1>this is test</h1>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi, alias.</p>
-            <button>click me!</button>
-
-        </section>
-        <section id="second">
-            <h1>Login to accesss the more info......</h1>          
-        </section>  
+<div id="content">
+    <!-- About Header -->
+    <div class="flex items-center justify-center mt-6 mb-6 px-4">
+        <div class="text-center max-w-2xl">
+           
+            <p class="mb-6 mt-10 text-gray-700 dark:text-gray-300 text-lg">
+                Good management is the art of making problems so interesting and their solutions so constructive that everyone wants to get to work and deal with them.
+            </p>
+        </div>
     </div>
 
+    <!-- Our Services Section -->
+    <div class="flex items-center justify-center mt-4 mb-10 px-6">
+        <div class="max-w-3xl text-center bg-blue-50 dark:bg-gray-800 p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-semibold text-blue-700 dark:text-blue-400 mb-4">What We Offer</h2>
+            <p class="text-gray-700 dark:text-gray-300 mb-3">
+                Our Contact Manager platform is designed to simplify the way you manage your professional and personal contacts. Whether you're storing phone numbers, email addresses, or social media links — everything is secure, organized, and easy to access.
+            </p>
+            <p class="text-gray-700 dark:text-gray-300">
+                We value privacy and productivity. That's why we provide customizable dashboards, smart contact grouping, real-time syncing, and mobile access from anywhere — all built with user-centric design and blazing-fast performance.
+            </p>
+        </div>
+    </div>
+
+    <!-- Profile Cards -->
+    <div class="flex flex-wrap justify-center gap-6 px-6 mb-10">
+        <!-- Card 1: Rahul -->
+        <div class="w-full max-w-sm bg-white border border-blue-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="flex justify-end px-4 pt-4">
+                <button id="dropdownButton1" data-dropdown-toggle="dropdown1"
+                        class="text-gray-500 hover:bg-blue-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-200 rounded-lg text-sm p-1.5"
+                        type="button">
+                    <span class="sr-only">Open dropdown</span>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3"><path d="M2 0a1.5 1.5 0 1 1 0 3A1.5 1.5 0 0 1 2 0Zm6.041 0a1.5 1.5 0 1 1 0 3A1.5 1.5 0 0 1 8.041 0ZM14 0a1.5 1.5 0 1 1 0 3A1.5 1.5 0 0 1 14 0Z"/></svg>
+                </button>
+                <div id="dropdown1"
+                     class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600">Email</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600">Facebook</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-red-600 hover:bg-blue-100 dark:hover:bg-gray-600">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col items-center pb-10">
+                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Rahul Yadav</h5>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Contact Manager</span>
+                <a href="#"
+                   class="mt-4 py-2 px-4 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300">Message</a>
+            </div>
+        </div>
+
+        <!-- Card 2: Kunal -->
+        <div class="w-full max-w-sm bg-white border border-blue-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <div class="flex justify-end px-4 pt-4">
+                <button id="dropdownButton2" data-dropdown-toggle="dropdown2"
+                        class="text-gray-500 hover:bg-blue-100 dark:text-gray-400 dark:hover:bg-gray-700 focus:ring-4 focus:outline-none focus:ring-blue-200 rounded-lg text-sm p-1.5"
+                        type="button">
+                    <span class="sr-only">Open dropdown</span>
+                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 16 3"><path d="M2 0a1.5 1.5 0 1 1 0 3A1.5 1.5 0 0 1 2 0Zm6.041 0a1.5 1.5 0 1 1 0 3A1.5 1.5 0 0 1 8.041 0ZM14 0a1.5 1.5 0 1 1 0 3A1.5 1.5 0 0 1 14 0Z"/></svg>
+                </button>
+                <div id="dropdown2"
+                     class="z-10 hidden text-base list-none bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700">
+                    <ul class="py-2">
+                        <li><a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600">Email</a></li>
+                        <li><a href="#" class="block px-4 py-2 hover:bg-blue-100 dark:hover:bg-gray-600">Facebook</a></li>
+                        <li><a href="#" class="block px-4 py-2 text-red-600 hover:bg-blue-100 dark:hover:bg-gray-600">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="flex flex-col items-center pb-10">
+                <h5 class="mb-1 text-xl font-medium text-gray-900 dark:text-white">Kunal Yadav</h5>
+                <span class="text-sm text-gray-500 dark:text-gray-400">Web Developer</span>
+                <a href="#"
+                   class="mt-4 py-2 px-4 text-sm font-medium text-white bg-blue-600 rounded-lg hover:bg-blue-700 focus:ring-4 focus:outline-none focus:ring-blue-300">Message</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- App Download Section -->
+    <div class="flex justify-center items-center mb-10">
+        <div class="w-full max-w-2xl p-6 text-center bg-blue-50 border border-blue-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+            <h5 class="mb-2 text-2xl font-bold text-blue-700 dark:text-blue-400">Work fast with us from anywhere</h5>
+            <p class="mb-4 text-gray-700 dark:text-gray-300">Stay up to date and move work forward with our Contact Manager App on iOS & Android. Download now!</p>
+            <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+                <a href="#" class="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800">Mac App Store</a>
+                <a href="#" class="bg-blue-700 text-white px-5 py-2 rounded-lg hover:bg-blue-800">Google Play</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-blue-800 text-white py-6">
+        <div class="container mx-auto text-center">
+            <p class="mb-2">&copy; 2025 Contact Manager. All rights reserved.</p>
+            <p>Follow us on 
+                <a href="#" class="underline hover:text-blue-300">Facebook</a>, 
+                <a href="#" class="underline hover:text-blue-300">Twitter</a>, 
+                and <a href="#" class="underline hover:text-blue-300">Instagram</a>.
+            </p>
+        </div>
+    </footer>
+</div>
+
+<script>
+    console.log("about page");
+</script>
 </body>
-</html> 
+</html>

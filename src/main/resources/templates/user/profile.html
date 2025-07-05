@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en" th:replace="~{base :: parent(~{::#content},~{::title},~{::script})}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title data-th-text="${loggedInUser.name} +' | SCM'">Profile</title>
+</head>
+
+<body>
+
+     <div id="content">
+
+        <!-- user is logged in : sidebar -->
+        <div th:if="${loggedInUser}">
+            <div data-th-replace="~{user/sidebar :: sidebar}"></div>
+        </div>
+        
+    <div class="sm:pl-64 pt-20" style="height: 1000px;">
+        <div class="flex justify-center flex-col items-center">
+           
+            <!-- profile design  -->
+            <div class="w-full max-w-2xl mx-auto mt-10 bg-gray-800 shadow-lg rounded-2xl overflow-hidden border border-gray-200 text-white">
+
+                <div class="flex flex-col md:flex-row items-center p-6 space-y-4 md:space-y-0 md:space-x-6">
+                  <img
+                    class="w-32 h-32 rounded-full border-4 border-blue-500 object-cover"
+                    th:src="@{${loggedInUser.profilePic}}" alt="Profile Picture" />
+                  
+                  <div class="text-center md:text-left">
+                    <h2 class="text-2xl font-bold text-gray-500" th:text="${loggedInUser.name}">Rahul</h2>
+                    <p class="text-sm text-gray-500" th:text="'Email: ' + ${loggedInUser.email}">Rahul@example.com</p>
+                    <p class="text-sm text-gray-500" th:text="'Phone: ' + ${loggedInUser.phoneNumber}">+91-9876543210</p>
+                    <p class="text-sm text-gray-500" th:text="'About: ' + ${loggedInUser.about}">Passionate dev</p>
+                  </div>
+                </div>
+              
+                <div class="px-6 py-4 grid grid-cols-1 sm:grid-cols-2 gap-4 text-sm text-gray-700">
+                  <div class="flex justify-between">
+                    <span class="font-medium">Email Verified:</span>
+                    <span th:text="${loggedInUser.emailVerified} ? 'Yes' : 'No'"
+                          th:classappend="${loggedInUser.emailVerified} ? 'text-green-600' : 'text-red-500'">Yes</span>
+                  </div>
+              
+                  <div class="flex justify-between">
+                    <span class="font-medium">Phone Verified:</span>
+                    <span th:text="${loggedInUser.phoneVerified} ? 'Yes' : 'No'"
+                          th:classappend="${loggedInUser.phoneVerified} ? 'text-green-600' : 'text-red-500'">No</span>
+                  </div>
+              
+                  <div class="flex justify-between">
+                    <span class="font-medium">Enabled:</span>
+                    <span th:text="${loggedInUser.enabled} ? 'Yes' : 'No'"
+                          th:classappend="${loggedInUser.enabled} ? 'text-green-600' : 'text-red-500'">Yes</span>
+                  </div>
+              
+                  <div class="flex justify-between">
+                    <span class="font-medium">Provider:</span>
+                    <span th:text="${loggedInUser.providers}">SELF</span>
+                  </div>
+                        
+                  <div class="col-span-1 sm:col-span-2">
+                    <span class="font-medium">Roles:</span>
+                    <ul class="list-disc list-inside ml-4 text-blue-600">
+                      <li th:each="role : ${loggedInUser.roleList}" th:text="${role}">USER</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+              
+              
+        </div>
+    </div>
+    </div>
+    <script>
+        console.log("Profile page");
+    </script>
+    <script>
+        console.log("thiis is Profile page of our project");
+    </script>
+
+
+</body>
+
+</html>
